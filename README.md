@@ -1,3 +1,4 @@
 # URL_Shortener_Go
 A service like tinyURL in Golang
-unchecked # [checkbox:unchecked]
+* [ ] Need to add documentation
+* [ ] Need to explain the working
