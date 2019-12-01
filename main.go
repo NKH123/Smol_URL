@@ -63,7 +63,6 @@ func createHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Fprintf(w, "Error: %s", err)
 	}
-	m[s] = org_url.OrigURL
 	//store key value in redis
 	options := redis.DefaultOptions // Address: "localhost:6379", Password: "", DB: 0
 	// Create client to interact with redis server
@@ -92,7 +91,6 @@ func redirectHandler(w http.ResponseWriter, r *http.Request) {
 	//extracting the short url
 	message = strings.TrimPrefix(message, "/url/")
 	fmt.Println("The short URL request is " + message)
-	_, ok := m[message]
 	options := redis.DefaultOptions // Address: "localhost:6379", Password: "", DB: 0
 	// Create client to redis server
 	client, err := redis.NewClient(options)
